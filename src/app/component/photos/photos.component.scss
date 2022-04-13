@@ -1,0 +1,17 @@
+.photos-div{
+  padding: 20px;
+  text-align: center;
+  .photo-items{
+    display: inline-block;
+    .photo-item{
+      margin:20px;
+      padding: 20px;
+      max-width: 200px;
+      display: inline-flex;
+      img{
+        margin-bottom: 20px;;
+      }
+    }
+  }
+
+}

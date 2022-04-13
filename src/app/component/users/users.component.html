@@ -1,0 +1,74 @@
+<div class="user-div">
+  <h1>select users to display</h1>
+  <div *ngIf="users.length>0" style="text-align: center;">
+    <select  class="form-control" (change)="selectUser($event)" >
+      <option value=""></option>
+      <option value="0">all</option>
+      <option *ngFor="let user of users" value="{{user['id']}}">
+        {{user["id"]}} | {{user["username"]}}
+      </option>
+    </select>
+  </div>
+  <div *ngIf="selectId==0">
+    <table class="table">
+      <thead>
+        <th>ID</th>
+        <th>name</th>
+        <th>username</th>
+        <th>phone</th>
+        <th>website</th>
+        <th>company</th>
+        <th>option</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user["id"]}}</td>
+          <td>{{user["name"]}}</td>
+          <td>{{user["username"]}}</td>
+          <td>{{user["phone"]}}</td>
+          <td>{{user["website"]}}</td>
+          <td>{{user["company"]["name"]}}</td>
+          <td><button class="btn btn-success bt-sm">detail</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="selectId>0">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>name</th>
+          <th>username</th>
+          <th>phone</th>
+          <th>website</th>
+          <th>company</th>
+          <th>option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            {{users[selectKey]["id"]}}
+          </td>
+          <td>
+            {{users[selectKey]["name"]}}
+          </td>
+          <td>
+            {{users[selectKey]["username"]}}
+          </td>
+          <td>
+            {{users[selectKey]["phone"]}}
+          </td>
+          <td>
+            {{users[selectKey]["website"]}}
+          </td>
+          <td>
+            {{users[selectKey]["company"]["name"]}}
+          </td>
+          <td><button class="btn btn-success bt-sm">detail</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="photos-div">
+  <h1>list of photos</h1>
+  <div *ngIf="photos.length>0">
+    <div *ngFor="let photo of photos" class="photo-items">
+      <div class="photo-item card">
+        <a href="{{photo['url']}}">
+          <img src="{{photo['thumbnailUrl']}}" alt="{{photo['title']}}" />
+        </a>
+        <p>{{photo["title"]}}</p>
+      </div>
+    </div>
+  </div>
+</div>
